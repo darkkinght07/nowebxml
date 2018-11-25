@@ -9,13 +9,14 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <commons.logging.version>1.0.4.v200706111724</commons.logging.version>
+        <commons.logging.version>1.2</commons.logging.version>
         <jackson.version>2.9.7</jackson.version>
         <jetty.version>9.4.14.v20181114</jetty.version>
         <log4j.version>1.2.17</log4j.version>
         <lombok.version>1.18.4</lombok.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+        <servlet.version>3.1.0</servlet.version>
         <spring.framework.version>5.1.2.RELEASE</spring.framework.version>
     </properties>
 
@@ -54,9 +55,16 @@
         </dependency>
 
         <dependency>
-            <groupId>org.eclipse.equinox</groupId>
-            <artifactId>org.apache.commons.logging</artifactId>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
             <version>${commons.logging.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${servlet.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- jetty -->
@@ -64,18 +72,21 @@
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-server</artifactId>
             <version>${jetty.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-webapp</artifactId>
             <version>${jetty.version}</version>
+            <scope>test</scope>
         </dependency>
 
         <dependency>
             <groupId>org.eclipse.jetty</groupId>
             <artifactId>jetty-annotations</artifactId>
             <version>${jetty.version}</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 
