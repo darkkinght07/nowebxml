@@ -1,0 +1,1 @@
+The goal is to create a working example of web application without using web.xml deployed to jetty.
