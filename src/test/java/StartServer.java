@@ -1,8 +1,8 @@
 import org.eclipse.jetty.annotations.AnnotationConfiguration;
-import org.eclipse.jetty.plus.webapp.EnvConfiguration;
-import org.eclipse.jetty.plus.webapp.PlusConfiguration;
 import org.eclipse.jetty.server.Server;
-import org.eclipse.jetty.webapp.*;
+import org.eclipse.jetty.webapp.Configuration;
+import org.eclipse.jetty.webapp.WebAppContext;
+import org.eclipse.jetty.webapp.WebInfConfiguration;
 
 public class StartServer {
 
@@ -14,10 +14,8 @@ public class StartServer {
         context.setResourceBase("src/main/webapp/");
 
         context.setConfigurations(new Configuration[] {
-                new AnnotationConfiguration(), new WebXmlConfiguration(),
-                new WebInfConfiguration(),
-                new PlusConfiguration(), new MetaInfConfiguration(),
-                new FragmentConfiguration(), new EnvConfiguration()
+                new AnnotationConfiguration(),
+                new WebInfConfiguration()
         });
 
         context.setAttribute("org.eclipse.jetty.server.webapp.ContainerIncludeJarPattern",".*/classes/*");
